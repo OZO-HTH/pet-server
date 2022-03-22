@@ -26,6 +26,19 @@ const petGoodsController = {
       res.json({code: 0, message: "操作失败", data: e})
     }
    
+  },
+  showPetGoodsByType: async function(req, res, next) {
+    let petGoods = await PetGoods.selectByType(req.params.type)
+
+    try {
+      res.json({
+        code: 200,
+        message: '操作成功',
+        data: petGoods
+      })
+    } catch(e) {
+      res.json({code: 0, message: '操作失败', data: e})
+    }
   }
 };
 

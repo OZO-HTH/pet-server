@@ -12,4 +12,6 @@ router.get('/get_petgoods', petGoodsController.showPetGoods)
 
 router.get('/get_petgoods/:id', petGoodsController.showPetGoodsById)
 
+router.get('/get_petgoodsByType/:type', petGoodsController.showPetGoodsByType)
+
 module.exports = router;

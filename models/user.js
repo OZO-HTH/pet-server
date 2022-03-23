@@ -9,6 +9,9 @@ class User extends Base {
   selectUserInfoById(id) {
     return knex.select('user_id', 'username', 'user_avatar').where('user_id', '=', id).from(this.table)
   }
+  selectUserByAccount(username, password) {
+    return knex.select('user_id').where('username', '=', username).andWhere('password', '=', password).from(this.table)
+  }
   
 }
 

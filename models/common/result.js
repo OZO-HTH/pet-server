@@ -5,15 +5,18 @@ class Result {
     this.data = options.data;
   }
   successMessage(message) {
-    return new Result({ message: message });
+    return new Result({ code: 200, message: message, data:null });
   }
   successMessageData(message, data) {
-    return new Result({ message: message, data: data });
+    return new Result({ code: 200, message: message, data: data });
   }
   errorCodeMessage(code, message) {
-    return new Result({ code: code, message: message });
+    return new Result({ code: code, message: message, data: null });
   }
   errorCodeMessageData(code, message, data) {
     return new Result({ code: code, message: message, data: data });
   }
 }
+
+
+module.exports = new Result()

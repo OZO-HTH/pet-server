@@ -1,8 +1,15 @@
-const Base = require('./base')
-const knex = require('./knex')
+const Base = require("./base");
+const knex = require("./knex");
 
 class User extends Base {
-    constructor(props = 'tab_user') {
-        super();
-    }
+  constructor(props = "tab_user") {
+    super(props);
+  }
+
+  selectUserInfoById(id) {
+    return knex.select('user_id', 'username', 'user_avatar').where('user_id', '=', id).from(this.table)
+  }
+  
 }
+
+module.exports = new User()

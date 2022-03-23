@@ -11,6 +11,7 @@ class PetGoods extends Base {
     selectByType(type) {
         return knex(this.table).where('type', '=', type).select()
     }
+    
 }
 
 module.exports = new PetGoods()
